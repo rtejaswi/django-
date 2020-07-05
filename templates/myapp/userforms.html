@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% extends 'myapp/home.html' %}
+  {% block body_block %}
+    <h1><em>ModelForms</em></h1>
+    <form method="post">
+      {{form.as_p}}
+      {% csrf_token %}
+      <input type="submit" value="Submit">
+  {% endblock %}

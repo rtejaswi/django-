@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'myapp/home.html' %}
+  {% block body_block %}
+    <h1>The Student Data</h1>
+    {% if stu_data %}
+    <table border="2px" solid>
+      <thead>
+        Sudent Data
+      </thead>
+      <th>Student Name</th>
+      <th>Student Class</th>
+      <th>Student Section</th>
+      <th>Student Roll No</th>
+      <th>Student Percentage</th>
+      {% for s in stu_data %}
+      <tr>
+        <td>{{s.student_name}}</td>
+        <td>{{s.student_class}}</td>
+        <td>{{s.student_section}}</td>
+        <td>{{s.student_roll_no}}</td>
+        <td>{{s.marks_obtained_in_percent}}</td>
+      </tr>
+      {%endfor%}
+    </table>
+    {%endif%}
+  {% endblock %}
